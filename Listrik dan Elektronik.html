@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Alat Elektronik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./boots34/css/bootstrap.min.css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./boots34/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/cerita.css">
+    <link rel="stylesheet" href="./css/slideanim.css">
+    <script type="text/javascript" src="js/d3v4min.js"></script>
+    <style>
+        .btn {
+            border: 1px solid darkgrey;
+            background-color: lightgray;
+            color:black;
+            width: 80px;
+        }
+
+        .elec{
+            font-size: 12px;
+            width:70px;
+            height:30px;
+            padding:4px;
+        }
+
+        .elec:hover{
+            background-color: #286090;
+            color:black;
+            border-width: 1px;  
+            border-color: #245269;
+        }
+
+        .pieb{
+            font-size: 13px;
+            width:100px;
+            height:30px;
+            padding:2px;
+        }
+
+        .pieb:hover{
+            background-color: #449d44;
+            color:black;
+            border-width: 1px;  
+            border-color: #4cae4c;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="gallery" class="container-fluid asw1" style="background-color: #ebd5bd">
+        <div class="row" style="height:90vh; ">
+            <div class="col-sm-12">
+                <br>
+                <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval=false>
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="Container carousel-inner" role="listbox" style="background-color: whitesmoke; ">
+                        <!-- GAMBAR 1 -->
+                        <div class="item active" >
+                            <!-- <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Jakarta, Provinsi Paling Tidak Peduli Terhadap Lampu Hemat Energi</h3><br> -->
+                            <!-- <div class="col-sm-1"></div> -->
+                            <!-- <div class="col-sm-10" style="height:460px;">
+                                
+                            </div> -->
+                            <div class="col-sm-12 narasi-cerita gambar-1" style="font-size:16px; height:550px; width:1210px; margin:20px;">
+                                <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Karakteristik Rumah Tangga Terhadap Listrik dan Alat Elektronik</h3><br>
+                                <!-- <div class="col-sm-1"></div>                                 -->
+                                <div class="col-sm-6" style="border: 1px; margin:auto; text-align:center">
+                                    <img class="logo1" src="img/logo2.png" alt="listrik dan lektronik" width="450px" height="450px" style="margin:auto; text-align: center;">
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Jakarta, Provinsi Paling Tidak Peduli Terhadap Lampu Hemat Energi</h3><br> -->
+                                    <p> <br> &nbsp;&nbsp;&nbsp;
+                                        Kemajuan teknologi sudah menjadi bagian dari kehidupan manusia. Bahkan dalam rumah tangga, teknologi sangat kita rasakan manfaatnya. Contoh kemjauan tekonologi di rumah tangga adalah alat-alat elektronik.  Alat elektronik dapat memberikan kenyamanan dan memudahkan pekerjaan rumah tangga. Alat elektronik dapat menjadi alat penerangan (lampu), sarana hiburan (contohnya TV), penyejuk ruangan (AC), dan membantu aktivitas lainnya.  
+                                        <br> &nbsp;&nbsp;&nbsp;
+                                        Di Indonesia, karakteristik rumah tangga terhadap listrik dan alat elektronik sangat bervariasi. Baik dari alat elektronik yang dimiliki, hingga perilaku saat membeli alat elektronik tersebut akan berbeda-beda disetiap rumah tangga. Gambaran perilaku pada listrik dan alat elektronik dapat menjadi dasar pengambilan kebijakan maupun untuk tujuan lainnya.                                        
+                                        <br> &nbsp;&nbsp;&nbsp;
+                                        Beberapa informasi dapat menggambarkan karakteristik rumah tangga terhadap listrik dan alat elektronik. Informasi tersebut dapat ditunjukkan dengan persentase penerangan rumah tangga yang menggunakan lampu listrik, tingkat kepemilikan alat-alat elektronik, dan perilaku rumah tangga saat membeli alat elektronik. Informasi ini dapat ditampilkan melalui grafik agar lebih mudah dipahami.
+                                    </p>    
+                                </div>
+                            </div>
+                            <!-- <div class="col-sm-1"></div> -->
+                        </div>
+
+                        <!-- GAMBAR 2 -->
+                        <div class="item" >
+                            <div class="row">
+                                <h2 style="margin:0px; padding:10px; color:darkslategrey; padding-top:20px;">Penerangan di Rumah Tangga</h2>
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-5">
+                                    <h4 style="margin:0px; padding-top:20px;">Persentase Rumah Tangga Memiliki Lampu dan Lampu Hemat Energi</h4>
+                                    <div id="mydata2">
+                                        <script src="./js/lampu.js"></script>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 narasi-cerita gambar-4" style="font-size:15px;margin-top: 20px; margin-left: 35px; height:400px;  ">
+                                    <!-- <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Jakarta, Provinsi Paling Tidak Peduli Terhadap Lampu Hemat Energi</h3><br> -->
+                                    <p> <br>&nbsp;&nbsp;&nbsp;
+                                        Lampu menjadi alat utama untuk penerangan di malam hari. Sebagian besar rumah tangga di Indonesia sudah menggunakan lampu listrik di rumahnya. Grafik disamping menunujukkan proporsi rumah tangga yang telah menggunakan lampu listrik di rumahnya menurut kategori rumah yang ditempati.
+                                        <br>&nbsp;&nbsp;&nbsp;
+                                        Sumbu vertikal (sumbu Y) menunjukkan persentase rumah tangga yang memiliki lampu listrik sedangkan sumbu horizontal (sumbu X) menunjukkan kategori rumah yang ditempati. Warna hijau tua menunjukkan tingkat proporsi rumah tangga yang telah memasang minimal 2 lampu listrik di rumahnya. Warna hijau muda menunjukkan tingkat proporsi rumah tangga yang telah menggunakan lampu hemat energi (minimal setengah dari total lampu) di rumahnya.
+                                        <br>&nbsp;&nbsp;&nbsp;
+                                        Dari grafik, dapat dilihat bahwa 98,36% rumah tangga di Indonesia telah menggunakan minimal 2 lampu listrik, 86,93% diantaranya telah menggunakan lampu hemat energi (minimal setengah dari lampu yang terpasang).
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+                        
+                        <!-- GAMBAR 3 -->
+                        <div class="item" >
+                            <div class="row">
+                                <h2 style="margin:0px; padding:10px; color:darkslategrey;">Tingkat Kepemimlikan Alat-Alat Elektronik</h2>
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-5">
+                                    <h4 style="margin:0px; padding-top:20px;">Persentase Rumah Tangga Menguasai Alat Elektronik Menurut Kategori Rumah</h4>
+                                    <div id="mydata3">
+                                        <script src="./js/elektronik.js"></script>
+                                    </div>
+                                    <button id="tbl1" class="btn elec" onclick="update3('TV',100,'tbl1')" >TV</button>
+                                    <button id="tbl2" class="btn elec" onclick="update3('AC',50,'tbl2')">AC</button>
+                                    <button id="tbl3" class="btn elec" onclick="update3('kipas',100,'tbl3')">Kipas</button>
+                                    <button id="tbl4" class="btn elec" onclick="update3('komputer',100,'tbl4')">Komputer</button>
+                                    <button id="tbl5" class="btn elec" onclick="update3('radio',100,'tbl5')">Radio</button>
+                                    <button id="tbl6" class="btn elec" onclick="update3('pompa',100,'tbl6')">Pompa Air</button>
+                                    <script>
+                                        document.getElementById("tbl1").style.backgroundColor = "#337ab7";
+                                        document.getElementById("tbl1").style.color = "white";
+                                    </script>
+                                </div>
+                                <div class="col-sm-5 narasi-cerita gambar-4" style="font-size:15px;margin-top:10px; margin-left: 15px; height:480px;">
+                                    <!-- <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Jakarta, Provinsi Paling Tidak Peduli Terhadap Lampu Hemat Energi</h3><br> -->
+                                    <p> <br> &nbsp;&nbsp;&nbsp;
+                                        Tidak semua rumah tangga di Indonesia mempunyai banyak alat elektronik di rumahnya. Grafik disamping menunjukkan alat elektronik yang umumnya dimiliki oleh rumah tangga di Indonesia menurut kategori rumah tinggalnya. 
+                                        <br> &nbsp;&nbsp;&nbsp;
+                                        Sumbu vertikal menunjukkan tingkat kepemilikan dalam bentuk persentase. Tombol dibawah grafik menunjukkan alat-alat elektronik yang dapat ditampilkan oleh grafik. Silahkan tekan tombol yang ada, maka akan muncul grafik kepemilikan alat elektronik yang dipilih pada rumah tangga di Indonesia. Batang berwarna biru tua menandakan rumah tangga dengan kategori tersebut memiliki persentase kepemilikan elektronik lebih tinggi dibanding persentase total se-Indonesia, sedangkan yang di bawah persentase total se-Indonesia ditandai dengan warna biru muda.
+                                        <br> &nbsp;&nbsp;&nbsp;
+                                        Dari grafik tersebut, salah satu informasi yang dapat diketahui adalah TV merupakan alat elektronik yang paling banyak dimiliki oleh rumah tangga di Indonesia. Lebih dari 80% rumah tangga di Indonesia memiliki TV, bahkan 91.79% rumah dinas memiliki TV. Sementara itu, AC merupakan alat elektronik yang paling sedikit dimiliki oleh rumah tangga. Hanya 6.65% rumah tangga di Indonesia yang memiliki AC. Grafik tersebut memperlihatkan kategori rumah bebas sewa cenderung lebih sedikit memiliki alat elektronik.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+
+                        <!-- GAMBAR 4 -->
+                        <div class="item" >
+                            <div class="row">
+                                <h2 style="margin:0px; padding:10px; color:darkslategrey;">Perilaku Rumah Tangga Saat membeli Alat Elaktronik</h2>
+                                <!-- <div class="col-sm-1"></div> -->
+                                <div class="col-sm-5" style="margin-left: 50px; margin-right: 50px;">
+                                    <h4 style="margin:0px; padding-top:20px;">Proporsi Pertimbangan Rumah Tangga Saat Membeli Alat Elektronik</h4>
+                                    <div id="mydata4">
+                                        <script src="./js/pie1.js"></script>
+                                    </div>
+                                    <button id="pieb1" class="btn pieb" onclick="button1(datum1,'pieb1')">Daya Rendah</button>
+                                    <button id="pieb2" class="btn pieb" onclick="button1(datum2,'pieb2')">Kualitas barang</button>
+                                    <button id="pieb3" class="btn pieb" onclick="button1(datum3,'pieb3')">Model/ Harga</button>
+                                    <button id="pieb4" class="btn pieb" onclick="button1(datum4,'pieb4')">Tempat servis</button>   
+                                    <script>
+                                        button1(datum1,'pieb1');   
+                                        document.getElementById('pieb1').style.backgroundColor = "#4cae4c";
+                                        document.getElementById('pieb1').style.color = "white";
+                                    </script>
+                                </div>
+                                <div class="col-sm-5 narasi-cerita gambar-4" style="font-size:15px;margin-top: 20px;height:400px;">
+                                    <!-- <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Jakarta, Provinsi Paling Tidak Peduli Terhadap Lampu Hemat Energi</h3><br> -->
+                                    <p> <br> &nbsp;&nbsp;&nbsp;
+                                        Setiap rumah tangga tentu memiliki pertimbangan saat membeli alat elektronik. Grafik di samping menunjukkan perilaku rumah tangga saat akan membeli alat elektronik. Kategori perilaku yang dapat disajikan adalah daya rendah, kualitas barang, model atau harga, dan tempat servis. Pada grafik ada 4 sikap rumah tangga pada tiap ketegori pertimbangan, yaitu selalu, sering, terkadang dan tidak pernah. Silahkan pilih tombol yang tersedia untuk melihat proporsi perilaku terhadap kategori pertimbangan saat membeli alat elektronik.
+                                        <br> &nbsp;&nbsp;&nbsp;
+                                        Grafik disamping, menginformasikan bahwa lebih dari 60% rumah tangga sering atau bahkan selalu mempertimbangkan daya rendah alat elektronik, kualitas barang, model atau harga barang saat membeli alat elektronik. Namun hampir 50% rumah tangga tidak pernah memperhatikan tempat servis elektronik saat membeli alat elektronik tersebut. Tingginya proporsi rumah tangga yang tidak memperhatikan tempat servis akan berindikasi meningkatnya sampah elektronik karna alat elektronik yang rusak cenderung tidak diservis padahal alat elektronik tersebut masih layak pakai.          
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+
+                        <!-- GAMBAR 5 -->
+                        <div class="item" >
+                            <div class="col-sm-1"></div>
+                            <!-- <div class="col-sm-10" style="height:460px;">
+                                
+                            </div> -->
+                            <div class="col-sm-12 narasi-cerita gambar-1" style="font-size:16px; height:550px; width:1210px; margin:20px;">
+                                <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Kesimpulan</h3><br>
+                                <p> <br> &nbsp;&nbsp;&nbsp;	
+                                    Tiga grafik yang ditampilkan dapat memberikan cukup banyak informasi.  Informasi tersebut dapat disimpulkan sebagai berikut.  Pertama, persentase rumah yang menggunakan setidaknya 2 lampu listrik di rumahnya sudah lebih dari 90%. Bahkan, Lebih dari 80% sudah menggunakan setidaknya setengah dari total lampu yang terpasang dengan lampu hemat energi. Kedua, sudah lebih dari 80% rumah tangga di Indonesia memiliki TV dan hanya sekitar 6% rumah tangga yang memiliki AC. Ketiga, ada lebih dari separuh rumah tangga di Indonesia yang selalu memperhatikan kriteria daya yang dibutuhkan, kualitas barang, serta model dan harga saat membeli alat elektronik. Namun, hampir separuh rumah tangga tidak pernah mempertimbangkan tempat servis saat membeli alat elektronik. Dengan tiga grafik tersebut, didapat gambaran mengenai karakteristik rumah tangga terhadap listrik dan alat elektronik.                                
+                                </p>
+                                <br>
+                                <br>
+                                <div style="text-align: center">
+                                    <button class ="btn btn-primary" style="width:150px;" onclick="window.location.href='./index.html'"> Kembali ke Galeri </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+
+                    </div>
+        
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="width:12px">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="width:12px">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+                </div>   
+            </div>
+    </div>
+    <div style="background-color:#ebd5bd; height:25px">
+    </div>
+
+    <!-- initialize AOS -->
+    <!-- AOS: library untuk efek slide up di kotak putih untuk visualisasi -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init(
+            {
+                duration: 1500
+            }
+        );
+    </script> -->
+
+    <!-- SMOOTH SCROLLING -->
+    <script>
+        $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function(){
+        
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+            } // End if
+        });
+        
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                $(this).addClass("slide");
+                }
+            });
+        });
+        })
+
+        // jQuery("#bar1").click();
+
+
+        // $("#myCarousel").on('slide.bs.carousel', function () {
+        //     d3.csv("dataa/"+datum+".csv", function(data) {
+        //         var y = d3.scaleLinear()
+        //             .domain([0, 25])
+        //             .range([h,0]);
+
+        //         svg.selectAll("line.garis")
+        //             .data(data)
+        //                 .transition().duration(800)
+        //                 .attr('y2',h)
+
+        //         svg.selectAll("circle.lings")
+        //             .data(data)
+        //                 .transition().duration(800)
+        //                 .attr("cy",h)
+
+        //         svg.selectAll("line.garis")
+        //         .data(data)
+        //             .transition().duration(1000).delay(500)
+        //             .attr('y2',function(d){ return y(d.Value)})
+
+        //         svg.selectAll("circle.lings")
+        //         .data(data)
+        //             .transition().duration(1000).delay(500)
+        //             .attr("cy",function(d){ return y(d.Value)})
+        //     })
+        //     // alert('A new slide is about to be shown!');
+        //     }
+        // );
+    </script>
+        
+    
+</body>
+</html>

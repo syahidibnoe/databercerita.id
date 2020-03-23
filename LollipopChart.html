@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lollipop Chart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./boots34/css/bootstrap.min.css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./boots34/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/cerita.css">
+    <link rel="stylesheet" href="./css/slideanim.css">
+    <script type="text/javascript" src="js/d3v4min.js"></script>
+    <style>
+        .btn {
+            border: 1px solid darkgrey;
+            width: 80px
+        }
+    </style>
+</head>
+<body>
+    <div id="gallery" class="container-fluid asw" style="background-color: #ebd5bd">
+        <div class="row" style="height:90vh; ">
+            <div class="col-sm-12">
+                <br>
+                <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval=false>
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox" style="background-color: whitesmoke">
+                        <!-- GAMBAR 1 -->
+                        <div class="item active" >
+                            <div class="col-sm-1"></div>
+                            <!-- <div class="col-sm-10" style="height:460px;">
+                                
+                            </div> -->
+                            <div class="col-sm-12 narasi-cerita gambar-1" style="font-size:16px; height:550px; width:1210px; margin:20px;">
+                                <h3 style="text-align:center; line-height: 1.375em; color:darkslategrey">Perilaku Ketidakpedulian Masyarakat Indonesia Tehadap Lingkungan Hidup</h3><br>
+
+                                <p> &nbsp;&nbsp;&nbsp;	
+                                    Indonesia memiliiki kekayaan alam yang luar biasa. Hal ini terlihat dari begitu banyak macam tumbuhan hijau dapat tumbuh di tanah air kita. Indonesia yang terletak di garis khatulistiwa dunia memiliki keindahan alam berupa gunung, laut, sungai, dan keindahan alam lainnya. Negara kita juga hanya memiliki dua musim, kemarau dan penghujan sehingga Indonesia mendapatkan pancaran panas matahari yang merupakan sumber panas utama di dunia. Namun bagaimana perilaku masayakat Indonesia terhadap anugrah yang dimiliki negara kita? Sudahkah kita mengoptimalkan fungsi matahari sebagai sumber penerangan? Masihkah masyarakat kita membuang sampah ke sungai atau menguburnya di tanah sehingga menyebabkan kerusakan lingkungan? Atau masihkah masyarakat kita menggunakan kantong plastik saat belanja sehingga meningkatkan sampah palstik di lingkungan? Sudah saatnya pemerintah dan masyarakat Indonesia mengevaluasi peliku kita terhadap lingkungan hidup.
+                                    <br> &nbsp;&nbsp;&nbsp; 
+                                    Grafik di samping menyajikan gambaran tingkat ketidakpedulian mesyarakat Indonesia terhadap lingkungan hidup di masing-masing indikator menurut provinsi. Sumbu vertikal menunjukkan persentase rumah tangga yang berperilaku tidak peduli terhadap indikator yang dipilih. Sumbu horizontal menunjukkan provinsi di Indonesia. Warna tiap batang disesuaikan dengan letak provinsi menurut pulaunya. Grafik ini dapat menampilkan 17 indikator perilaku ketidakpedulian terhadap lingkungan hidup. Silahkan pilih indikator yang anda ingin ketahui dan tekan tombol ‘pilih’ di atas grafik. Grafik di samping juga memiliki fitur untuk mengelompokkan provinsi menurut pulau ataupun menurut peringkat dari tertinggi hingga terendah.
+                                    <br> &nbsp;&nbsp;&nbsp;    
+                                    Dari grafik, terlihat bahwa Provinsi DKI Jakarta merupakan provinsi paling tidak peduli terdahap lampu hemat energi. Sekitar 20% rumah tangga di DKI Jakarta belum menggunakan lampu hemat energi sama sekali di rumahnya. Namun untuk indikator Buang Sampah, Provinsi DKI jakarta menjadi yang terendah. Hal ini berarti pengangkutan sampah di Provinsi DKI Jakarta sudah sangat baik sehingga sangat sedikit rumah tangga di Provinsi ini yang masih membuang sampah ke sungai, dibakar, atau dibuang sembarangan. Jika dilihat dari kelompok pulau, persentase ketidakpedulian provinsi di Pulau Sumatra bagian atas cenderung lebih tinggi dibanding provinsi di pulau lain. Dan untuk indikator Barang Bekas, persentase ketidakpedulian provinsi di Pulau Maluku, Papua dan Nusa Tenggara cenderung lebih tinggi dibanding pulau lain. Data selengkapnya mengenai tingkat ketidak pedulian di masing-masing provinsi dapat dilihat pada grafik disamping.
+                                </p>
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+                        <!-- GAMBAR 2 -->
+                        <div  class="item">
+                            <div id="Container">
+                                <h3 style="text-align:center; color:darkslategrey; margin: 0 ; padding-top: 0.5em;"> 
+                                    PERSENTASE RUMAH TANGGA BERPRILAKU TIDAK PEDULI<br>DI MASING MASING INDIKATOR BERDASARKAN PROVINSI
+                                </h3>
+                                <div style="padding-top: 1em;">
+                                    <text>Pilih Kategori : </text>
+                                    <select name="opsi" id="opsi" value="Pilih Kategori">
+                                        <option value="Lampu_HE">Lampu Hemat Energi</option>
+                                        <option value="Panci"	>Menutup Panci</option>
+                                        <option value="MatiinLampu">Mematikan Lampu</option>
+                                        <option value="Matahari">Pemanfaatkan Matahari</option>
+                                        <option value="TV"		>Penggunaan TV</option>
+                                        <option value="DayaRendah">Daya Rendah</option>
+                                        <option value="PilahSampah">Memilah Sampah</option>
+                                        <option value="BuangSampah">Buang Sampah</option>
+                                        <option value="BarangBekas">Barang Bekas</option>
+                                        <option value="TasBelanja">Tas Belanja</option>
+                                    </select>
+                                    <button onclick="Ganti()">Pilih</button>    
+                                </div>
+                                <div>
+                                    <script src="js/chart.js"></script> 
+                                </div>
+                                <div >
+                                    Disusun Menurut : 
+                                    <button id = "pulau" class="btn" onclick="Urutan(1,'pulau')">Pulau</button>
+                                    <button id = "rank" class="btn" onclick="Urutan(2,'rank')">Ranking</button>	
+                                </div>
+                                <script>
+                                    document.getElementById("pulau").style.backgroundColor = "brown";
+                                    document.getElementById("pulau").style.color = "white"; 
+                                </script>
+                            </div>
+                        </div>  
+                        <div class="item" >
+                            <div class="col-sm-12 narasi-cerita gambar-1" style="font-size:16px; height:550px; width:1210px; margin:20px;">
+                                <br><br><br><br><br><br><br><br><br><br><br><br>
+                                <div style="text-align: center;">
+                                    <button class ="btn btn-primary" style="width:150px;" onclick="window.location.href='./index.html'"> Kembali ke Galeri </button>
+                                </div>                    
+                            </div>
+                        </div>
+                        
+                    </div>
+        
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="width:12px">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="width:12px">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+                </div>   
+            </div>
+    </div>
+    <div style="background-color:#ebd5bd; height:25px">
+    </div>
+
+    <!-- initialize AOS -->
+    <!-- AOS: library untuk efek slide up di kotak putih untuk visualisasi -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <!-- <script>
+        AOS.init(
+            {
+                duration: 1500
+            }
+        );
+    </script> -->
+
+    <!-- SMOOTH SCROLLING -->
+    <script>
+        $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function(){
+        
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+            } // End if
+        });
+        
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                $(this).addClass("slide");
+                }
+            });
+        });
+        })
+
+        $("#myCarousel").on('slide.bs.carousel', function () {
+            d3.csv("dataa/"+datum+".csv", function(data) {
+                var y = d3.scaleLinear()
+                    .domain([0, batas(datum)])
+                    .range([h,0]);
+
+                svg.selectAll("line.garis")
+                    .data(data)
+                        .transition().duration(800)
+                        .attr('y2',h)
+
+                svg.selectAll("circle.lings")
+                    .data(data)
+                        .transition().duration(800)
+                        .attr("cy",h)
+
+                svg.selectAll("line.garis")
+                .data(data)
+                    .transition().duration(1000).delay(500)
+                    .attr('y2',function(d){ return y(d.Value)})
+
+                svg.selectAll("circle.lings")
+                .data(data)
+                    .transition().duration(1000).delay(500)
+                    .attr("cy",function(d){ return y(d.Value)})
+            })
+            // alert('A new slide is about to be shown!');
+            }
+        );
+    </script>
+        
+    
+</body>
+</html>

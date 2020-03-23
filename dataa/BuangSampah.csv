@@ -1,0 +1,36 @@
+NamProv,Value,NamProv_R,Value_R
+Aceh,80.48,Nusa Tenggara Timur,87.51
+Sumatera Utara,72.24,Gorontalo,86
+Sumatera Barat,73.96,Sulawesi Tengah,84.04
+Riau,69.01,Lampung,83.57
+Kepulauan Riau,31.8,Sulawesi Barat,83.52
+Jambi,75.28,Aceh,80.48
+Sumatera Selatan,70.12,Kalimantan Barat,80.42
+Bengkulu,75.45,Papua,78.59
+Bangka-Belitung,54.88,Nusa Tenggara Barat,77.19
+Lampung,83.57,Bengkulu,75.45
+DKI Jakarta,2.12,Jambi,75.28
+Jawa Barat,55.7,Sumatera Barat,73.96
+Jawa Tengah,72.36,Maluku Utara,73.23
+D I Yogyakarta,55.92,Jawa Tengah,72.36
+Jawa Timur,70.53,Sumatera Utara,72.24
+Banten,49.17,Maluku,71.03
+Bali,45.89,Jawa Timur,70.53
+Nusa Tenggara Barat,77.19,Sumatera Selatan,70.12
+Nusa Tenggara Timur,87.51,Riau,69.01
+Kalimantan Barat,80.42,Sulawesi Tenggara,67.72
+Kalimantan Tengah,66.26,Papua Barat,67.07
+Kalimantan Selatan,58.91,Kalimantan Tengah,66.26
+Kalimantan Timur,33.45,Sulawesi Selatan,65.81
+Kalimantan Utara,42.04,Indonesia,63.83
+Sulawesi Utara,62.14,Sulawesi Utara,62.14
+Sulawesi Tengah,84.04,Kalimantan Selatan,58.91
+Sulawesi Selatan,65.81,D I Yogyakarta,55.92
+Sulawesi Tenggara,67.72,Jawa Barat,55.7
+Gorontalo,86,Bangka-Belitung,54.88
+Sulawesi Barat,83.52,Banten,49.17
+Maluku,71.03,Bali,45.89
+Maluku Utara,73.23,Kalimantan Utara,42.04
+Papua Barat,67.07,Kalimantan Timur,33.45
+Papua,78.59,Kepulauan Riau,31.8
+Indonesia,63.83,DKI Jakarta,2.12

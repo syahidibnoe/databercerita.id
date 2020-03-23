@@ -1,0 +1,36 @@
+NamProv,Value,NamProv_R,Value_R
+Aceh,2.1,DKI Jakarta,10.48
+Sumatera Utara,3.76,Papua,8.54
+Sumatera Barat,1.17,Papua Barat,6.9
+Riau,0.82,Bali,5.22
+Kepulauan Riau,1.46,Sulawesi Selatan,4.12
+Jambi,1.96,Sumatera Utara,3.76
+Sumatera Selatan,1.46,Sulawesi Utara,3.63
+Bengkulu,1.3,Nusa Tenggara Barat,3.13
+Bangka-Belitung,1.41,Jawa Timur,3.1
+Lampung,1.92,Sulawesi Barat,3.09
+DKI Jakarta,10.48,Indonesia,2.93
+Jawa Barat,2.89,Jawa Barat,2.89
+Jawa Tengah,2.13,Kalimantan Timur,2.53
+D I Yogyakarta,1.5,Maluku,2.39
+Jawa Timur,3.1,Banten,2.32
+Banten,2.32,Maluku Utara,2.23
+Bali,5.22,Jawa Tengah,2.13
+Nusa Tenggara Barat,3.13,Aceh,2.1
+Nusa Tenggara Timur,0.8,Sulawesi Tengah,1.99
+Kalimantan Barat,1.86,Jambi,1.96
+Kalimantan Tengah,1.24,Lampung,1.92
+Kalimantan Selatan,1.14,Kalimantan Barat,1.86
+Kalimantan Timur,2.53,Sulawesi Tenggara,1.77
+Kalimantan Utara,0.7,D I Yogyakarta,1.5
+Sulawesi Utara,3.63,Kepulauan Riau,1.46
+Sulawesi Tengah,1.99,Sumatera Selatan,1.46
+Sulawesi Selatan,4.12,Bangka-Belitung,1.41
+Sulawesi Tenggara,1.77,Bengkulu,1.3
+Gorontalo,0.4,Kalimantan Tengah,1.24
+Sulawesi Barat,3.09,Sumatera Barat,1.17
+Maluku,2.39,Kalimantan Selatan,1.14
+Maluku Utara,2.23,Riau,0.82
+Papua Barat,6.9,Nusa Tenggara Timur,0.8
+Papua,8.54,Kalimantan Utara,0.7
+Indonesia,2.93,Gorontalo,0.4
