@@ -143,3 +143,43 @@ img.logo1{
   padding-right: 10px;
   margin-left:10px;
 }
+
+/* .btn {
+  border: 1px solid darkgrey;
+  width: 80px
+} */
+
+.btn {
+  border: 1px solid darkgrey;
+  background-color: lightgray;
+  color:black;
+  width: 80px;
+}
+
+.elec{
+  font-size: 12px;
+  width:70px;
+  height:30px;
+  padding:4px;
+}
+
+.elec:hover{
+  background-color: #286090;
+  color:black;
+  border-width: 1px;  
+  border-color: #245269;
+}
+
+.pieb{
+  font-size: 13px;
+  width:100px;
+  height:30px;
+  padding:2px;
+}
+
+.pieb:hover{
+  background-color: #449d44;
+  color:black;
+  border-width: 1px;  
+  border-color: #4cae4c;
+}
