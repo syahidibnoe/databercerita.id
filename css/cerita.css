@@ -150,7 +150,8 @@ img.logo1{
 } */
 
 .btn {
-  border: 1px solid darkgray;
+/*   border: 1px solid darkgray; */
+  border: 1px solid black;
   background-color: lightgray;
   color:black;
   width: 80px;
