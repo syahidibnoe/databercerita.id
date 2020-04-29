@@ -187,11 +187,11 @@ function Urutan(numer,aidi) {
                 .transition().duration(1500)
                 .call(d3.axisBottom(x))
             
-            svg.selectAll("circle")
+            svg.selectAll("circle.lings")
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
     
-            svg.selectAll("line")
+            svg.selectAll("line.garis")
                 .transition().duration(1500)
                     .attr('x1',function(d){ return x(d.NamProv)+15.5})
                     .attr('x2',function(d){ return x(d.NamProv)+15.5})
@@ -248,7 +248,7 @@ function Ganti() {
                 .transition().duration(1000)
                 .attr('y2',function(d){ return y(d.Value)})
 
-            svg.selectAll("circle")
+            svg.selectAll("circle.lings")
                 .data(data)
                 .transition().duration(1000)
                 .attr("cy",function(d){ return y(d.Value)})
@@ -268,7 +268,7 @@ function Ganti() {
                     .attr('x1',function(d){ return x(d.NamProv)+15.5})
                     .attr('x2',function(d){ return x(d.NamProv)+15.5})
 
-            svg.selectAll("circle")
+            svg.selectAll("circle.lings")
                 .data(data)
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
