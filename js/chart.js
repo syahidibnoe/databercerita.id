@@ -3,7 +3,7 @@ var datum='Lampu_HE';
 var judul='Lampu Hemat Energi';
 var maks;
 var x;
-var margin = { top: 15, right: 50, bottom: 130, left: 50 }
+var margin = { top: 15, right: 40, bottom: 130, left: 60 }
     h = 405 - margin.top - margin.bottom
     w = 1150 - margin.left - margin.right
     canvas = d3.select("#Container").append('svg')
@@ -19,23 +19,22 @@ var color = d3.scaleOrdinal()
             "darkgreen","darkgreen","LightCoral","LightCoral","LightCoral","LightCoral","LightCoral","Darkorange","Darkorange","Darkorange","Darkorange","Darkorange","Darkorange","brown","brown","brown","brown","darkGrey"]);
 
 var batas = d3.scaleOrdinal()
-    .domain(["Lampu_HE","Panci","MatiinLampu","Matahari","TV","DayaRendah","PilahSampah","BuangSampah","BarangBekas","TasBelanja"])
+   .domain(["Lampu_HE","Panci","MatiinLampu","Matahari","TV","DayaRendah","PilahSampah","BuangSampah","BarangBekas","TasBelanja","IPKLH"])
     // .range([25,10,25,15,15,55,80,90,20,90]); 
-    .range([25,20,30,20,20,75,90,90,30,90]);
+   .range([25,20,30,20,20,75,90,90,30,90,1]);
 
 var ket = d3.scaleOrdinal()
-    .domain(["Lampu_HE","Panci","MatiinLampu","Matahari","TV","DayaRendah","PilahSampah","BuangSampah","BarangBekas","TasBelanja"])
+   .domain(["Lampu_HE","Panci","MatiinLampu","Matahari","TV","DayaRendah","PilahSampah","BuangSampah","BarangBekas","TasBelanja","IPKLH"])
     .range(["tidak memasang lampu hemat energi di rumah","tidak menutup saat merebus/memassak air",
             "sering tidak mematikan lampu saat tidak digunakan","tidak memanfaatkan matahari sebagai penerangan ruangan",
             "sering menyalakan TV meski tidak digunakan","tidak mempertimbangkan daya listrik saat membeli alat elektronik",
             "tidak memilah sampah basah dan sampah kering","membuang sampah ke sungai/got, dibakar atau ditimbun tanah",
-            "membuang barang bekas masih layak pakai","tidak pernah menggunakan tas belanja sendiri saat berbelanja"]); 
-
-
+            "membuang barang bekas masih layak pakai","tidak pernah menggunakan tas belanja sendiri saat berbelanja","Indeks Perilaku Ketidakperilaku Ketidakpedulian Lingkungan Hidup"]); 
 
 canvas.append("rect")
     .attr("x",margin.left)
     .attr("y",355)
+    // .attr("fill","lightgrey")
     .attr("fill","#E5E7E9 ")
     .attr("height",48)
     .attr("width",w+10)
@@ -100,7 +99,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
         .padding(0.2);
         
     var y = d3.scaleLinear()
-        .domain([0, batas(datum)])
+        .domain([0, 25])
         .range([h,0]);
         
     svg.append("g")
@@ -160,24 +159,6 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
 
 });
 
-function show() {
-    d3.csv("dataa/Lampu_HE.csv", function(data) {
-        var y = d3.scaleLinear()
-            .domain([0, 25])
-            .range([h,0]);
-            
-        svg.selectAll("line")
-        .data(data)
-            .transition().duration(1000)
-            .attr('y2',function(d){ return y(d.Value)})
-
-        svg.selectAll("circle")
-        .data(data)
-            .transition().duration(1000)
-            .attr("cy",function(d){ return y(d.Value)})
-    })
-};
-
 function Urutan(numer,aidi) {
     if (num!=numer) {
         num= numer;
@@ -236,7 +217,7 @@ function Ganti() {
         .duration(300)
         .delay(300)
         .attr("opacity",1)
-        .text("Indikator "+judul);
+        .text(function (d){ return judul=="IPKLH"? judul: "Indikator " + judul;});
 
     canvas.select(".keterangan")
         .transition()
@@ -248,11 +229,12 @@ function Ganti() {
         .duration(300)
         .delay(300)
         .attr("opacity",1)    
-        .text("Ket : Persentase rumah tangga yang " + ket(datum));    
+        .text(function (d){ 
+            return judul=="IPKLH"? "Ket : Indeks Perilaku Ketidakpedulian Lingkungan Hidup": "Ket : Persentase rumah tangga yang " + ket(datum);}
+        );    
 
     d3.csv("dataa/"+datum+".csv", function(data) {
         y = d3.scaleLinear()
-            // .domain([0, 100])
             .domain([0, maks])
             .range([h,0]);
 
@@ -292,7 +274,6 @@ function Ganti() {
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
                     .attr("cy",function(d){ return y(d.Value)})
         }		
-        
         
         svg.selectAll(".label")
             .data(data)
