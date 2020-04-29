@@ -36,12 +36,12 @@ var ket = d3.scaleOrdinal()
 canvas.append("rect")
     .attr("x",margin.left)
     .attr("y",355)
-    .attr("fill","lightgrey")
+    .attr("fill","#E5E7E9 ")
     .attr("height",48)
     .attr("width",w+10)
     .attr("opacity",0.7)
     .attr('stroke','darkgrey')
-    .attr('stroke-width',3);
+    .attr('stroke-width',1.5);
 
 canvas.append("line")
     .attr('x1',490)
