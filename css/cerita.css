@@ -109,6 +109,7 @@ div.gps-content {
   /* margin-right: 5px; */
   text-align: justify;
   margin-bottom: 3px;
+  font-size: 16.5;
 }
 
 div.gambar-2 {
@@ -150,8 +151,7 @@ img.logo1{
 } */
 
 .btn {
-  border: 1px solid darkgray;
-/*   border: 1px solid black; */
+  border: 1px solid darkgrey;
   background-color: lightgray;
   color:black;
   width: 80px;
@@ -160,7 +160,7 @@ img.logo1{
 .elec{
   font-size: 12px;
   width:70px;
-  height:30px;
+  height:27px;
   padding:4px;
 }
 
@@ -184,3 +184,25 @@ img.logo1{
   border-width: 1px;  
   border-color: #4cae4c;
 }
+
+b{
+  color:black;
+}
+
+select#opsi {
+  color: black;
+  font-size: 14px;
+  padding: 2px 10px;
+  background: white;
+  border: 1px solid darkgray;
+  /* overflow: hidden; */
+  width: 250px;
+  height:25px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+select#opsi{
+
+}
+
