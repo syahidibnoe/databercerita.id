@@ -1,0 +1,36 @@
+NamProv,Value,NamProv_R,Value_R
+Aceh,0.55,Aceh,0.55
+Sumatera Utara,0.52,Kepulauan Riau,0.54
+Sumatera Barat,0.52,Jambi,0.54
+Riau,0.52,Jawa Barat,0.54
+Kepulauan Riau,0.54,Jawa Timur,0.53
+Jambi,0.54,Banten,0.53
+Sumatera Selatan,0.51,Kalimantan Barat,0.53
+Bengkulu,0.52,Kalimantan Timur,0.53
+Bangka-Belitung,0.51,Sumatera Utara,0.52
+Lampung,0.51,Sumatera Barat,0.52
+DKI Jakarta,0.51,Riau,0.52
+Jawa Barat,0.54,Bengkulu,0.52
+Jawa Tengah,0.51,D I Yogyakarta,0.52
+D I Yogyakarta,0.52,Bali,0.52
+Jawa Timur,0.53,Nusa Tenggara Barat,0.52
+Banten,0.53,Kalimantan Tengah,0.52
+Bali,0.52,Kalimantan Selatan,0.52
+Nusa Tenggara Barat,0.52,Papua Barat,0.52
+Nusa Tenggara Timur,0.41,Papua,0.52
+Kalimantan Barat,0.53,Sumatera Selatan,0.51
+Kalimantan Tengah,0.52,Bangka-Belitung,0.51
+Kalimantan Selatan,0.52,Lampung,0.51
+Kalimantan Timur,0.53,DKI Jakarta,0.51
+Kalimantan Utara,0.49,Jawa Tengah,0.51
+Sulawesi Utara,0.48,Sulawesi Tengah,0.51
+Sulawesi Tengah,0.51,Sulawesi Barat,0.51
+Sulawesi Selatan,0.49,Indonesia,0.51
+Sulawesi Tenggara,0.47,Kalimantan Utara,0.49
+Gorontalo,0.46,Sulawesi Selatan,0.49
+Sulawesi Barat,0.51,Sulawesi Utara,0.48
+Maluku,0.47,Maluku Utara,0.48
+Maluku Utara,0.48,Sulawesi Tenggara,0.47
+Papua Barat,0.52,Maluku,0.47
+Papua,0.52,Gorontalo,0.46
+Indonesia,0.51,Nusa Tenggara Timur,0.41
