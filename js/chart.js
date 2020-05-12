@@ -163,7 +163,7 @@ function Urutan(numer,aidi) {
     if (num!=numer) {
         num= numer;
         d3.csv("dataa/"+ datum +".csv", function(data) {
-            tmp = document.getElementsByClassName("btn")
+            tmp = document.getElementsByClassName("btnn")
             tmp[0].style.backgroundColor = "";
             tmp[0].style.color = "";
             tmp[1].style.backgroundColor = "";
