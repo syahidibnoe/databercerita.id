@@ -230,7 +230,7 @@ function Ganti() {
         .delay(300)
         .attr("opacity",1)    
         .text(function (d){ 
-            return judul=="IPKLH"? "Ket : Indeks Perilaku Ketidakpedulian Lingkungan Hidup": "Ket : Persentase rumah tangga yang " + ket(datum);}
+            return judul=="IPKLH"? "Ket : Indeks Perilaku Ketidakpedulian Lingkungan Hidup (Skala 0 - 1)": "Ket : Persentase rumah tangga yang " + ket(datum);}
         );    
 
     d3.csv("dataa/"+datum+".csv", function(data) {
