@@ -54,7 +54,7 @@ canvas.append("line")
 canvas.append("text")
     .attr("class","judul")
     .text("Indikator " + judul)
-    .attr("x",520)
+    .attr("x",515)
     .attr("y",373)
     .style('font-weight','bold');
     // .attr()
@@ -92,7 +92,8 @@ d3.csv("dataa/legen.csv", function(data) {
 // console.log(legen.y);
 
 d3.csv("dataa/Lampu_HE.csv", function(data) {
-        
+    // console.log(data);
+    
     var x = d3.scaleBand()
         .range([ 0,w ])
         .domain(data.map(function(d) { return d.NamProv; }))
@@ -116,6 +117,31 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
         .call(d3.axisLeft(y));
 
     // svg.append("text")
+
+    svg.append("line")
+        .attr("class","nasional")
+        .attr('x1',0)
+        .attr('y1',y(data[34].Value))
+        .attr('x2',w)
+        .attr('y2',y(data[34].Value))
+        .attr('stroke-width',1)
+        .attr('stroke','grey')
+        .style("stroke-dasharray", ("5, 7"))
+        .style("opacity",0);
+
+    canvas.append("text")
+        .attr("class","ket_nas nas1")
+        .text("Nasional")
+        .attr("x",w+60)
+        .attr("y",y(data[34].Value)+10)
+        .attr("font-size",10);
+
+    canvas.append("text")
+        .attr("class","ket_nas nas2")
+        .text(data[34].Value+"%")
+        .attr("x",w+63)
+        .attr("y",y(data[34].Value)+23)
+        .attr("font-size",11.5);
     
     svg.selectAll("myline")
         .data(data)
@@ -190,6 +216,10 @@ function Urutan(numer,aidi) {
             svg.selectAll("circle.lings")
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
+            
+            svg.selectAll("circle.lings")
+                .transition().duration(1500)
+                    .attr('cx',function(d){ return x(d.NamProv)+15.5})
     
             svg.selectAll("line.garis")
                 .transition().duration(1500)
@@ -240,25 +270,45 @@ function Ganti() {
 
         svg.select(".yax")
             .transition().duration(1000)
-            .call(d3.axisLeft(y))
+            .call(d3.axisLeft(y));
+
+        svg.select("line.nasional")
+            .transition().duration(1500)
+            .attr('y1',function(d){ return y(data[34].Value)})
+            .attr('y2',function(d){ return y(data[34].Value)});
+
+        canvas.selectAll("text.nas1")
+            .transition().duration(1500)
+            .attr('y',y(data[34].Value)+10)
+
+        canvas.selectAll("text.nas2")
+            .transition().duration(1500)
+            .text(data[34].Value+"%")
+            .attr('y',y(data[34].Value)+23)
         
         if (num==1) {
             svg.selectAll("line.garis")
                 .data(data)
-                .transition().duration(1000)
+                .transition().duration(1500)
                 .attr('y2',function(d){ return y(d.Value)})
 
             svg.selectAll("circle.lings")
                 .data(data)
-                .transition().duration(1000)
+                .transition().duration(1500)
                 .attr("cy",function(d){ return y(d.Value)})
+
+            svg.selectAll("circle.lings")
+                .data(data)
+                .transition().duration(1500)
+                .attr("cy",function(d){ return y(d.Value)})
+            
         } else {
             var x = d3.scaleBand()
                 .range([ 0,w])
                 .domain(data.map(function(d) { return d.NamProv_R; }))
                 .padding(0.2);
             svg.select(".xax")
-                .transition().duration(1000)
+                .transition().duration(1500)
                 .call(d3.axisBottom(x))
 
             svg.selectAll("line.garis")
@@ -268,6 +318,12 @@ function Ganti() {
                     .attr('x1',function(d){ return x(d.NamProv)+15.5})
                     .attr('x2',function(d){ return x(d.NamProv)+15.5})
 
+            svg.selectAll("circle.lings")
+                .data(data)
+                .transition().duration(1500)
+                    .attr('cx',function(d){ return x(d.NamProv)+15.5})
+                    .attr("cy",function(d){ return y(d.Value)})
+            
             svg.selectAll("circle.lings")
                 .data(data)
                 .transition().duration(1500)
