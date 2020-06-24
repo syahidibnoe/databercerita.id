@@ -175,14 +175,20 @@
                     .range([h,0]);
 
                 svg.selectAll("line.garis")
-                    .data(data)
                         .transition().duration(800)
-                        .attr('y2',h)
+                        .attr('y2',h);
 
                 svg.selectAll("circle.lings")
-                    .data(data)
-                        .transition().duration(800)
-                        .attr("cy",h)
+                    .transition().duration(800)
+                    .attr("cy",h);
+                
+                svg.selectAll("circle.lings")
+                    .transition().duration(800)
+                    .attr("cy",h);
+                
+                svg.select("line.nasional")
+                    .transition().duration(80)
+                    .style("opacity",0)
 
                 svg.selectAll("line.garis")
                 .data(data)
@@ -193,6 +199,23 @@
                 .data(data)
                     .transition().duration(1000).delay(500)
                     .attr("cy",function(d){ return y(d.Value)})
+
+                svg.selectAll("circle.lings")
+                .data(data)
+                    .transition().duration(1000).delay(500)
+                    .attr("cy",function(d){ return y(d.Value)})
+
+                svg.select("line.nasional")
+                    .transition().duration(1000).delay(550)
+                    .style("opacity",1)
+
+                canvas.selectAll("text.ket_nas")
+                    .transition().duration(80)
+                    .style("opacity",0)
+
+                canvas.selectAll("text.ket_nas")
+                    .transition().duration(1000).delay(550)
+                    .style("opacity",1)
             })
             // alert('A new slide is about to be shown!');
             }
