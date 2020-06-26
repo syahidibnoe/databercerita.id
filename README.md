@@ -9,11 +9,14 @@ DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visual
 Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id)
 Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua aplikasi berikut
 - Xampp
-- Web Browser
+> Untuk Menjalankan server lokal
+- Web Browser (cth:Google Chrome)
+>untuk membuka halaman web
 
 ## Built With
 
 * [Data Driven Document (D3.js)](d3js.org/)
+>Sebuah kumpulan fungsi Javascript untuk membangun visualisasi data yag berupa _open source_
 
 
 ## Author
