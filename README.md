@@ -2,6 +2,7 @@
 # DataBercerita
 DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visualisasi data naratif dan interaktif. Aplikasi ini dapat menajadi referensi contoh dari implementasi visualisasi data dinamis. Pada aplikasi ini, contoh implementasi visualisasi data dinamis disajikan dalam bentuk narasi cerita. Saat ini, sudah ada dua narasi cerita yang tersedia. Kedua cerita ini menggunakan data SUSENASS Modul Hansos 2017 dan menerapkan konsep visualisasi data naratif dan interaktif
 
+
 ## Getting Started
 
 <img src="img/icon.png" align="right" />
@@ -9,9 +10,8 @@ DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visual
 Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id)
 Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua aplikasi berikut
 - Xampp
-> Untuk Menjalankan server lokal
 - Web Browser (cth:Google Chrome)
->untuk membuka halaman web
+
 
 ## Built With
 
@@ -19,12 +19,12 @@ Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua a
 >Sebuah kumpulan fungsi Javascript untuk membangun visualisasi data yag berupa _open source_
 
 
-## Author
+### Author
 
 1. Ahmad Syahid Ibnu Syarif
 2. Dr. Tiodora H. S., M.Pop.Hum.Res
 
-## Contacts
+### Contacts
 16.8979@stis.ac.id atau syahidibnu77@gmail.com
 
 
