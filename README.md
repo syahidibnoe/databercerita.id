@@ -18,6 +18,7 @@ Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua a
 * [Data Driven Document (D3.js)](d3js.org/)
 >Sebuah kumpulan fungsi Javascript untuk membangun visualisasi data yang berupa _open source_
 
+---
 
 ### Author
 
