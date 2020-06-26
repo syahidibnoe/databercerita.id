@@ -14,8 +14,8 @@ Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua a
 
 ## Author
 
-*Ahmad Syahid Ibnu Syarif
-*Dr. Tiodora H. S., M.Pop.Hum.Res
+1. Ahmad Syahid Ibnu Syarif
+2. Dr. Tiodora H. S., M.Pop.Hum.Res
 
 ## Contacts
 16.8979@stis.ac.id atau syahidibnu77@gmail.com
