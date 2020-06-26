@@ -1,7 +1,7 @@
 ![bekgron](img/bekgronn5.jpg?raw=true)
 
 # DataBercerita
-DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visualisasi data naratif dan interaktif. Aplikasi ini dapat menjadi referensi contoh dari implementasi visualisasi data dinamis. Pada aplikasi ini, contoh implementasi visualisasi data dinamis disajikan dalam bentuk narasi cerita. Saat ini, sudah ada dua narasi cerita yang tersedia. Kedua cerita ini menggunakan data SUSENAS Modul Hansos 2017 dan menerapkan konsep visualisasi data naratif dan interaktif.
+<p align="justify"> &nbsp;&nbsp;&nbsp; DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visualisasi data naratif dan interaktif. Aplikasi ini dapat menjadi referensi contoh dari implementasi visualisasi data dinamis. Pada aplikasi ini, contoh implementasi visualisasi data dinamis disajikan dalam bentuk narasi cerita. Saat ini, sudah ada dua narasi cerita yang tersedia. Kedua cerita ini menggunakan data SUSENAS Modul Hansos 2017 dan menerapkan konsep visualisasi data naratif dan interaktif.</p>
 
 ---
 
@@ -9,8 +9,8 @@ DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visual
 
 <img src="img/icon.png" align="right" />
 
-Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id)
-Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi berikut terk=lebih dahulu
+<p align="justify"> &nbsp;&nbsp;&nbsp; Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id)
+Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi berikut terlebih dahulu</p>
 - Xampp
 - Web Browser (cth:Google Chrome)
 
