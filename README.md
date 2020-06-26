@@ -10,7 +10,7 @@ DataBercerita merupakan aplikasi galeri berbasis web yang berisi kumpulan visual
 <img src="img/icon.png" align="right" />
 
 Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id)
-Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua aplikasi berikut
+Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi berikut terk=lebih dahulu
 - Xampp
 - Web Browser (cth:Google Chrome)
 
