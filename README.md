@@ -25,4 +25,4 @@ Untuk menggunkan aplikasi ini di komputer lokal, pastikan sudah terinstall dua a
 16.8979@stis.ac.id atau syahidibnu77@gmail.com
 
 
-Copyright 2020 © Politeknik Statistika STIS.
+***Copyright 2020 © Politeknik Statistika STIS.***
