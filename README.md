@@ -28,8 +28,10 @@ Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi 
 1. Ahmad Syahid Ibnu Syarif
 2. Dr. Tiodora H. S., M.Pop.Hum.Res
 
+<p align="right">
 ### Contacts
 16.8979@stis.ac.id atau syahidibnu77@gmail.com
+</p>
 
 ---
 
