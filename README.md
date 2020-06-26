@@ -23,7 +23,7 @@ Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi 
 
 ---
 
-#### Author
+### Author
 1. Ahmad Syahid Ibnu Syarif
 2. Dr. Tiodora H. S., M.Pop.Hum.Res
 
