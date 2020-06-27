@@ -9,7 +9,7 @@
 
 <img src="img/icon.png" align="right" />
  
-&nbsp;&nbsp;&nbsp; Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id).
+&nbsp;&nbsp;&nbsp; Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](https://syahidibnoe.github.io/databercerita.id).
 Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi berikut terlebih dahulu.
 
 - Xampp
