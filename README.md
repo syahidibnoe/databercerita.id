@@ -9,7 +9,7 @@
 
 <img src="img/icon.png" align="right" />
 
-<p align="justify"> &nbsp;&nbsp;&nbsp; Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id)
+<p align="justify"> &nbsp;&nbsp;&nbsp; Aplikasi ini dapat dijalankan jika menggunakan server. Saat ini sudah dapat diakses melalui browser melalui link [DataBercerita](syahidibnoe.github.io/databercerita.id) <br>
 Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi berikut terlebih dahulu</p>
 
 - Xampp
@@ -20,7 +20,7 @@ Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi 
 ## Built With
 
 * [Data Driven Document (D3.js)](d3js.org/)
->Sebuah kumpulan fungsi Javascript untuk membangun visualisasi data yang berupa _open source_
+>Sebuah kumpulan fungsi Javascript yang berupa _open source_ untuk membangun visualisasi data 
 
 ---
 
