@@ -19,7 +19,7 @@ Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi 
 
 ## Built With
 
-* [Data Driven Document (D3.js)](d3js.org/)
+* [Data Driven Document (D3.js)](https://d3js.org/)
 >Sebuah kumpulan fungsi Javascript yang berupa _open source_ untuk membangun visualisasi data 
 
 ---
