@@ -13,103 +13,93 @@
 </head>
 
 <body>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>H</b>ome</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#menu" class="w3-bar-item w3-button"><b>G</b>aleri</a>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<div >
-  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <div style="height: 100vh; width: 100vw; background-image: url(img/bekgronn5.jpg); background-size: cover;"></div>
-  </header>
-</div>
-
-<div id="menu" style="height:50px; background-color:#f1f1f1;"></div>
-
-<div class="row text-center tab" style="background-color:whitesmoke;" >
-  <div class="col-md-4 text-center" style="align-text:center">
-    <button id="btn1" class="tablinks" onclick="klik('galeri','btn1')" style="width:440px">Galeri Cerita</button>
-  </div>
-  <div class="col-md-4 text-center">
-    <button id="btn2" class="tablinks" onclick="klik('visual','btn2')" style="width:440px">Visualisasi Data Dinamis</button>
-  </div>
-  <div class="col-md-4 text-center">
-    <button id="btn3" class="tablinks" onclick="klik('tentang','btn3')" style="width:440px">Tentang</button>
-  </div>
-</div>
-
-<!-- Page content -->
-<div class="w3-content w3-padding container" style="max-width:1564px">
-  <div id="galeri" class="kotak" style="display:block;">
-    <!-- Project Section -->
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="margin-top:0">Galeri Visualisasi Data Naratif</h3>
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Cerita 1</div>
-          <a href="LollipopChart.html" class="w3-hover-opacity">
-            <img src="img/logo1.png" alt="Loading" width="270px" height="270px">
-            <div class="w3-display-middle w3-display-hover">
-              <button class="w3-button w3-black">Baca Cerita</button>
-            </div>
-            <p class="judul">
-            <!-- <b style="color:black; font-size:16;">Perilaku Ketidakpedulian Masyarakat <br> Indonesia Tehadap Lingkungan Hidup</b> -->
-              <b style="color:black; font-size:16;">Seberapa Peduli Masyarakat Indonesia Terhadap Lingkungan Hidup?</b>
-            </p>
-          </a>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Cerita 2</div>
-          <a href="Listrik dan Elektronik.html" class="w3-hover-opacity">
-            <img src="img/logo2.png" alt="Loading" width="270px" height="270px">
-            <div class="w3-display-middle w3-display-hover">
-              <button class="w3-button w3-black">Baca Cerita</button>
-            </div>
-            <p class="judul">
-              <b >Karakteristik Rumah Tangga <br> Terhadap Listrik dan Alat Elektronik</b>
-            </p>
-          </a>
-        </div>
-      </div>
-<!--       <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Cerita 3</div>
-          <a href="cerita2.html" class="w3-hover-opacity"> 
-            <img src="img/gisu2.gif" alt="Loading" width="270px" height="270px">
-            <div class="w3-display-middle w3-display-hover">
-              <button class="w3-button w3-black">cooming soon..</button>
-            </div>
-            <p class="judul">
-              <b>Coming Soon..</b>
-            </p>
-          </a>
-        </div>
-      </div> -->
-      <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Cerita 3</div>
-          <!-- <a href="cerita2.html" class="w3-hover-opacity"> -->
-            <img src="img/gisu4.gif" alt="Loading" width="270px" height="270px">
-            <div class="w3-display-middle w3-display-hover">
-              <button class="w3-button w3-black">cooming soon..</button>
-            </div>
-            <p class="judul">
-              <b>Coming Soon..</b>
-            </p>
-          </a>
-        </div>
+  <!-- Navbar  -->
+  <div class="w3-top">
+    <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button"><b>H</b>ome</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="#menu" class="w3-bar-item w3-button"><b>G</b>aleri</a>
       </div>
     </div>
   </div>
+
+  <!-- Header -->
+  <div >
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+      <div style="height: 100vh; width: 100vw; background-image: url(img/bekgronn5.jpg); background-size: cover;"></div> <!-- bekgron -->
+    </header>
+  </div>
+
+  <!-- tab menu -->
+  <div id="menu" style="height:50px; background-color:#f1f1f1;"></div>
+  <div class="row text-center tab" style="background-color:whitesmoke;" >
+    <div class="col-md-4 text-center">
+      <button id="btn1" class="tablinks" onclick="klik('galeri','btn1')" style="width:440px">Galeri Cerita</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button id="btn2" class="tablinks" onclick="klik('visual','btn2')" style="width:440px">Visualisasi Data Dinamis</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button id="btn3" class="tablinks" onclick="klik('tentang','btn3')" style="width:440px">Tentang</button>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="w3-content w3-padding container" style="max-width:1564px">
+    <div id="galeri" class="kotak" style="display:block;">
+      <!-- Project Section -->
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="margin-top:0">Galeri Visualisasi Data Naratif</h3>
+      <div class="w3-row-padding">
+        <!-- Cerita 1 -->
+        <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Cerita 1</div>
+            <a href="LollipopChart.html" class="w3-hover-opacity">
+              <img src="img/logo1.png" alt="Loading" width="270px" height="270px">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Baca Cerita</button>
+              </div>
+              <p class="judul">
+                <b style="color:black; font-size:16;">Seberapa Peduli Masyarakat Indonesia Terhadap Lingkungan Hidup?</b>
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cerita 2 -->
+        <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Cerita 2</div>
+            <a href="Listrik dan Elektronik.html" class="w3-hover-opacity">
+              <img src="img/logo2.png" alt="Loading" width="270px" height="270px">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Baca Cerita</button>
+              </div>
+              <p class="judul">
+                <b >Karakteristik Rumah Tangga <br> Terhadap Listrik dan Alat Elektronik</b>
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cerita 3 (Coming soon) -->
+        <div class="w3-col l3 m6 w3-margin-bottom w3-border-left w3-border-light-grey">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Cerita 3</div>
+            <!-- <a href="cerita2.html" class="w3-hover-opacity"> -->
+              <img src="img/gisu4.gif" alt="Loading" width="270px" height="270px">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">cooming soon..</button>
+              </div>
+              <p class="judul">
+                <b>Coming Soon..</b>
+              </p>
+            <!-- </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- Penjelasan Visualisasi Data Dinamis -->
   <div id="visual" class="kotak container" style="margin-left: auto; margin-right: auto;">
