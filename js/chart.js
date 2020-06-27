@@ -103,7 +103,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
         
     svg.append("g")
         .attr("class","xax")
-        .attr("transform", "translate(2.5	," + h + ")")
+        .attr("transform", "translate(2.5," + h + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
         .attr("transform", "translate(-8,0)rotate(-40)")
@@ -150,7 +150,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
             .attr('y1',h)
             .attr('x2',function(d){ return x(d.NamProv)+15.5})
             .attr('y2',h)
-            .attr('stroke-width',5)
+            .attr('stroke-width',4)
             .attr('stroke',function(d){ return color(d.NamProv)});				
             
     svg.selectAll("circle")
@@ -160,7 +160,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
             .attr('class','lings')
             .attr('cx',function(d){ return x(d.NamProv)+15.5})
             .attr('cy',h)
-            .attr('r',13)
+            .attr('r',12)
             .attr('fill',function(d){ return color(d.NamProv)})
             .attr('stroke','black')
             .attr('stroke-width',0.8)
