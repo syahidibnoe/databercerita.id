@@ -33,4 +33,4 @@ Untuk menggunakan aplikasi ini di komputer lokal, silahkan install dua aplikasi 
 
 ---
 
-<p align="center"> ***<b>Copyright 2020 © Politeknik Statistika STIS.</b>*** </p>
+<p align="center"> *** <b>Copyright 2020 © Politeknik Statistika STIS</b> *** </p>
