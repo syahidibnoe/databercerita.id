@@ -1,5 +1,5 @@
 // var h = 550;
-var margin = { top: 20, right: 20, bottom: 20, left: 25 }
+var margin = { top: 20, right: 20, bottom: 45, left: 25 }
     h = 350 - margin.top - margin.bottom
     w = 450 - margin.left - margin.right
     svg = d3.select("#mydata3").append('svg')
@@ -8,6 +8,7 @@ var margin = { top: 20, right: 20, bottom: 20, left: 25 }
         .append('g')
         .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
 
+// default tampilan barchart
 d3.csv("elektr/TV.csv", function(data) {	
     // console.log(data)		
     var x = d3.scaleBand()
@@ -24,24 +25,22 @@ d3.csv("elektr/TV.csv", function(data) {
         .attr("transform", "translate(2.5	," + h + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
-        // .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "middle");
 
     svg.append("g")
         .attr("class","yax")
         .call(d3.axisLeft(y));
     
+    // Garis persentase nasional
     svg.append("line")
         .attr("class","garis")
             .attr('x1',0)
             .attr('y1',y(data[5].persen))
-
             .attr('x2',w)
             .attr('y2',y(data[5].persen))
-            // .attr('y1',y(50))
-            // .attr("y2",0)
             .attr('stroke-width',1)
-            .attr('stroke','grey');				
+            .attr('stroke','grey');
+            // .style("stroke-dasharray", ("3, 3"));				
             
     svg.selectAll("mybar")
         .data(data)
@@ -54,14 +53,11 @@ d3.csv("elektr/TV.csv", function(data) {
             .attr('width',x.bandwidth()-15)
             .attr('fill',function(d){ 
                 if(d.persen==data[5].persen){
-                    // return "green";
                     return "#3498DB";
                 }else{
-                    // return d.persen>= data[5].persen ? "darkBLue" :"Grey"
                     return d.persen>= data[5].persen ? "#2874A6" :"#85C1E9";
                 }})
             .attr("opacity",0.9)
-            // .attr('stroke','black')
             .on('mouseover', function () {
                 d3.select(this)
                     .transition()
@@ -77,13 +73,9 @@ d3.csv("elektr/TV.csv", function(data) {
             .append('title') // Tooltip
                 .attr("class","label")
                 .text(function (d) { return d.persen+"%"})
-                // .text(data[5].TV)
-
-
 });
 
-// update3('radio')
-
+// Fungsi ganti variabel elektronik
 function update3(datum,batas,aidi) {    
     tmp = document.getElementsByClassName("elec")
     for (i = 0; i < 6; i++) {
@@ -103,11 +95,6 @@ function update3(datum,batas,aidi) {
         svg.select(".yax")
             .transition().duration(500)
             .call(d3.axisLeft(y))
-        // console.log(data)
-            
-        // var y = d3.scaleLinear()
-        //     .domain([74, 94])
-        //     .range([h,0]);
 
         svg.select(".garis")
             .data(data)
@@ -122,10 +109,8 @@ function update3(datum,batas,aidi) {
                 .attr("height",function(d){return h-y(d.persen)})
                 .attr('fill',function(d){ 
                     if(d.persen==data[5].persen){
-                        // return "green";
                         return "#3498DB";
                     }else{
-                        // return d.persen > data[5].persen ? "darkBLue" :"Grey"
                         return d.persen>= data[5].persen ? "#2874A6" :"#85C1E9";
                 }});
 
@@ -133,14 +118,5 @@ function update3(datum,batas,aidi) {
             .data(data)
             .transition()
             .text(function (d) { return d.persen+"%"})
-            
-
     })
-    // d3.csv("Kat_rumah.csv", function(data) {
-    //     var y = d3.scaleLinear()
-    //         .domain([data[5].ay-10, data[5].ay+10])
-    //         .range([h,0]);
-        
-
-    // )}
 }

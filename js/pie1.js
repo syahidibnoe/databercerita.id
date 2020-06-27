@@ -2,8 +2,6 @@ var width = 600
 height = 350
 margin = 100
 
-// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-// var radius = Math.min(width, height) / 2 - margin +20
 var radius = 250 - margin
 
 // append the svg object to the div called 'my_dataviz'
@@ -15,26 +13,21 @@ var svg2 = d3.select("#mydata4")
     .attr("transform", "translate(" + (500/2+17)  + "," + (150)+ ")")
     .attr("class","fadeIn");
 
-// Create dummy data
+// data
 var datum1 = {"Selalu":29837 , "Sering": 15156, "Terkadang":12720,"Tidak pernah":16540} //74253
 var datum2 = {"Selalu":36515 , "Sering": 18307, "Terkadang":9483, "Tidak pernah":9948}  //74253
-var datum3 = {"Selalu":37480 , "Sering": 16031, "Terkadang":11721,"Tidak pernah":9021} //83041
-var datum4 = {"Selalu":12976 , "Sering": 7208,  "Terkadang":17809, "Tidak pernah":36269} //65474
+var datum3 = {"Selalu":37480 , "Sering": 16031, "Terkadang":11721,"Tidak pernah":9021} //74253
+var datum4 = {"Selalu":12967 , "Sering": 7208,  "Terkadang":17809, "Tidak pernah":36269} //74253
 
-// set the color scale
+// set skala warna
 var color = d3.scaleOrdinal()
     .domain(["Selalu", "Sering", "Terkadang", "Tidak pernah"])
-    // .range(d3.schemeDark2);
     .range(["Green","darkBlue","Orange","Brown"]);
 
-// Compute the position of each group on the pie:
+// Menghitung posisi
 var pie = d3.pie()
     .sort(null) // Do not sort group by size
-    .value(function(d) {return d.value; })
-// var data_ready = pie(d3.entries(data))
-
-;
-
+    .value(function(d) {return d.value; });
 
 // The arc generator
 var arc = d3.arc()
@@ -56,13 +49,9 @@ var slice = svg2.selectAll("path.slice")
     .attr("opacity",0.9);
 
 // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-         
 
+// Fungsi ganti variabel
 function button1(dats,aidii) {
-    // d3.csv(dats, function(data) {
-        // var pie = d3.pie()
-        //     .sort(null) // Do not sort group by size
-        //     .value(function(d) {return d.value; })
     tmp2 = document.getElementsByClassName("pieb")
     for (i = 0; i < 4; i++) {
         tmp2[i].style.backgroundColor = "";
@@ -70,7 +59,6 @@ function button1(dats,aidii) {
     }
     document.getElementById(aidii).style.backgroundColor = "#449d44";
     document.getElementById(aidii).style.color = "white";
-
 
     var data_ready = pie(d3.entries(dats))
 
@@ -86,9 +74,11 @@ function button1(dats,aidii) {
             };
         });
 
+    // hapus garis dan teks label
     svg2.selectAll('polyline').remove();       
     svg2.selectAll('text').remove();
 
+    // Buat garis dan teks label baru
     svg2
         .selectAll('allPolylines')
         .data(data_ready)
@@ -144,6 +134,7 @@ function button1(dats,aidii) {
         })
         .style("opacity",0);
 
+    // transisi muncul teks label
     svg2.selectAll('text')
         .transition().delay(200).duration(200)
         .style("opacity",1);
@@ -164,5 +155,4 @@ function button1(dats,aidii) {
                 .duration(50)
                 .attr('opacity',0.9)
             });
-    // });
 }

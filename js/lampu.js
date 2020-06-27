@@ -11,6 +11,7 @@ var margin = { top: 5, right: 50, bottom: 70, left: 30 }
     kotak = ["#196F3D","#76D7C4"]
     teks = ["Lampu Listrik","Lampu Hemat Energi"]
 
+// legenda
 svg1.selectAll("bar")
     .data(kotak)
     .enter()
@@ -31,8 +32,8 @@ svg1.selectAll("tekss")
         .attr("x",function(d,i){return 140*i +120;})
         .attr("y",h1+43);
 
+// barchart
 d3.csv("./elektr/lampuu2.csv", function(data) {	
-    // console.log(data)	x	
     var x = d3.scaleBand()
         .range([ 0,w1])
         .domain(data.map(function(d) { return d.Kat_rumah; }))
@@ -62,7 +63,9 @@ d3.csv("./elektr/lampuu2.csv", function(data) {
             .attr('x2',w1)
             .attr('y2',y(data[5].lampu))
             .attr('stroke-width',1)
-            .attr('stroke','grey');				
+            .attr('stroke','grey');
+            // .attr('stroke','red')
+            // .style("stroke-dasharray", ("3, 3"));				
             
     svg1.selectAll("mybar")
         .data(data)
@@ -72,12 +75,9 @@ d3.csv("./elektr/lampuu2.csv", function(data) {
             .attr('x',function(d){ return x(d.Kat_rumah)+6})
             .attr('y',function(d){return y(d.lampu)})
             .attr('height',function(d){return h1-y(d.lampu)})
-            // .attr('width',x.bandwidth()-30)
             .attr('width',25)
-            // .attr('fill',"green")
             .attr('fill',"#196F3D")
             .attr("opacity",0.9)
-            // .attr('stroke','black')
             .on('mouseover', function () {
                 d3.select(this)
                     .transition()
@@ -92,9 +92,7 @@ d3.csv("./elektr/lampuu2.csv", function(data) {
                 })
             .append('title') // Tooltip
                 .attr("class","label")
-                .text(function (d) { return d.lampu+"%"})
-                // .text(data[5].TV)
-
+                .text(function (d) { return d.lampu+"%"});
 
     svg1.selectAll("mybar")
         .data(data)
@@ -104,12 +102,9 @@ d3.csv("./elektr/lampuu2.csv", function(data) {
             .attr('x',function(d){ return x(d.Kat_rumah)+32})
             .attr('y',function(d){return y(d.lampu_H)})
             .attr('height',function(d){return h1-y(d.lampu_H)})
-            // .attr('width',x.bandwidth()-30)
             .attr('width',25)
-            // .attr('fill',"brown")
             .attr('fill',"#76D7C4")
             .attr("opacity",0.9)
-            // .attr('stroke','black')
             .on('mouseover', function () {
                 d3.select(this)
                     .transition()

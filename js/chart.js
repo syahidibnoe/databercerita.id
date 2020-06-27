@@ -13,16 +13,17 @@ var margin = { top: 15, right: 40, bottom: 130, left: 60 }
             .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
 
 var color = d3.scaleOrdinal()
-    .domain(["Aceh","Sumatra Utara","Sumatra Barat","Riau","Kepulauan Riau","Jambi","Sumatera Selatan","Bengkulu","Bangka-Belitung","Lampung","DKI Jakarta","Jawa Barat","Jawa Tengah","D I Yogyakarta","Jawa Timur","Banten","Bali","Nusa Tenggara Barat","Nusa Tenggara Timur",
-            "Kalimantan Barat","Kalimantan Tengah","Kalimantan Selatan","Kalimantan Timur","Kalimantan Utara","Sulawesi Utara","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Sulawesi Barat","Maluku","Maluku Utara","Papua Barat","Papua","Indonesia"])
-    .range(["deepskyblue","deepskyblue","deepskyblue","deepskyblue","deepskyblue","mediumslateblue","mediumslateblue","mediumslateblue","mediumslateblue","mediumslateblue","Lightgreen","Lightgreen","Lightgreen","Lightgreen","Lightgreen","Lightgreen","darkgreen",
-            "darkgreen","darkgreen","LightCoral","LightCoral","LightCoral","LightCoral","LightCoral","Darkorange","Darkorange","Darkorange","Darkorange","Darkorange","Darkorange","brown","brown","brown","brown","darkGrey"]);
+    .domain(["Aceh","Sumatra Utara","Sumatra Barat","Riau","Kepulauan Riau","Jambi","Sumatera Selatan","Bengkulu","Bangka-Belitung",          "Lampung","DKI Jakarta","Jawa Barat","Jawa Tengah","D I Yogyakarta","Jawa Timur","Banten","Bali","Nusa Tenggara Barat",
+        "Nusa Tenggara Timur","Kalimantan Barat","Kalimantan Tengah","Kalimantan Selatan","Kalimantan Timur","Kalimantan Utara","Sulawesi Utara","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Sulawesi Barat","Maluku","Maluku Utara","Papua Barat","Papua","Indonesia"])
+    .range(["deepskyblue","deepskyblue","deepskyblue","deepskyblue","deepskyblue","mediumslateblue","mediumslateblue","mediumslateblue",      "mediumslateblue","mediumslateblue","Lightgreen","Lightgreen","Lightgreen","Lightgreen","Lightgreen","Lightgreen","darkgreen",
+        "darkgreen","darkgreen","LightCoral","LightCoral","LightCoral","LightCoral","LightCoral","Darkorange","Darkorange","Darkorange","Darkorange","Darkorange","Darkorange","brown","brown","brown","brown","darkGrey"]);
 
+// batas sumbu x dinamis
 var batas = d3.scaleOrdinal()
    .domain(["Lampu_HE","Panci","MatiinLampu","Matahari","TV","DayaRendah","PilahSampah","BuangSampah","BarangBekas","TasBelanja","IPKLH"])
-    // .range([25,10,25,15,15,55,80,90,20,90]); 
    .range([25,20,30,20,20,75,90,90,30,90,1]);
 
+// Untuk legenda - penjelasan indikator
 var ket = d3.scaleOrdinal()
    .domain(["Lampu_HE","Panci","MatiinLampu","Matahari","TV","DayaRendah","PilahSampah","BuangSampah","BarangBekas","TasBelanja","IPKLH"])
     .range(["tidak memasang lampu hemat energi di rumah","tidak menutup saat merebus/memassak air",
@@ -31,6 +32,7 @@ var ket = d3.scaleOrdinal()
             "tidak memilah sampah basah dan sampah kering","membuang sampah ke sungai/got, dibakar atau ditimbun tanah",
             "membuang barang bekas masih layak pakai","tidak pernah menggunakan tas belanja sendiri saat berbelanja","Indeks Perilaku Ketidakperilaku Ketidakpedulian Lingkungan Hidup"]); 
 
+// Kotak legenda            
 canvas.append("rect")
     .attr("x",margin.left)
     .attr("y",355)
@@ -49,7 +51,7 @@ canvas.append("line")
     .attr('y2',410)
     .attr('stroke-width',5)
     .attr('stroke','black')
-    .attr("opacity",0.7);	
+    .attr("opacity",0.7);
 
 canvas.append("text")
     .attr("class","judul")
@@ -57,8 +59,6 @@ canvas.append("text")
     .attr("x",515)
     .attr("y",373)
     .style('font-weight','bold');
-    // .attr()
-    // .style("text-anchor", "middle");
 
 canvas.append("text")
     .attr("class","keterangan")
@@ -66,8 +66,8 @@ canvas.append("text")
     .attr("x",515)
     .attr("y",393)
     .attr("font-size",12.7);
-    // .style("text-anchor", "middle");
 
+// Keterangan Warna
 d3.csv("dataa/legen.csv", function(data) {
     canvas.selectAll("legen").data(data)
         .enter()
@@ -88,12 +88,10 @@ d3.csv("dataa/legen.csv", function(data) {
             .text(function(d) {return d.pulau})
             .attr("font-size",12);
 });
-// console.log(legen.x);
-// console.log(legen.y);
 
+// Tampilan default grafik (Lampu hemat energi)
 d3.csv("dataa/Lampu_HE.csv", function(data) {
-    // console.log(data);
-    
+    // Sumbu X dan Y
     var x = d3.scaleBand()
         .range([ 0,w ])
         .domain(data.map(function(d) { return d.NamProv; }))
@@ -116,8 +114,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
         .attr("class","yax")
         .call(d3.axisLeft(y));
 
-    // svg.append("text")
-
+    // Persentase nasional
     svg.append("line")
         .attr("class","nasional")
         .attr('x1',0)
@@ -143,6 +140,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
         .attr("y",y(data[34].Value)+23)
         .attr("font-size",11.5);
     
+    // Lollipop
     svg.selectAll("myline")
         .data(data)
         .enter()
@@ -185,6 +183,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
 
 });
 
+// Fungsi pengurutan (Pulau atau ranking)
 function Urutan(numer,aidi) {
     if (num!=numer) {
         num= numer;
@@ -196,7 +195,8 @@ function Urutan(numer,aidi) {
             tmp[1].style.color = "";
             document.getElementById(aidi).style.backgroundColor = "brown";
             document.getElementById(aidi).style.color = "white";
- 
+
+            // Buat sumbu x sesuai urutan di data csv
             if (num==1) {
                 var x = d3.scaleBand()
                     .range([ 0,w])
@@ -213,10 +213,11 @@ function Urutan(numer,aidi) {
                 .transition().duration(1500)
                 .call(d3.axisBottom(x))
             
+            // Transisi lolipop
             svg.selectAll("circle.lings")
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
-            
+                
             svg.selectAll("circle.lings")
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
@@ -231,12 +232,14 @@ function Urutan(numer,aidi) {
 
 };
 
+// Fungsi ganti indikator
 function Ganti() {
     var opsi = document.getElementById("opsi");
     datum = opsi.options[opsi.selectedIndex].value;
     judul = opsi.options[opsi.selectedIndex].text;
     maks=batas(datum);
 
+    // update keterangan indikator
     canvas.select('.judul')
         .transition()
         .duration(200)
@@ -263,6 +266,7 @@ function Ganti() {
             return judul=="IPKLH"? "Ket : Indeks Perilaku Ketidakpedulian Lingkungan Hidup (Skala 0 - 1)": "Ket : Persentase rumah tangga yang " + ket(datum);}
         );    
 
+    // transisi perubahan grafik
     d3.csv("dataa/"+datum+".csv", function(data) {
         y = d3.scaleLinear()
             .domain([0, maks])
@@ -286,6 +290,7 @@ function Ganti() {
             .text(data[34].Value+"%")
             .attr('y',y(data[34].Value)+23)
         
+        // disesuaikan dengan state pengurutan yang sedang aktif
         if (num==1) {
             svg.selectAll("line.garis")
                 .data(data)
@@ -331,11 +336,10 @@ function Ganti() {
                     .attr("cy",function(d){ return y(d.Value)})
         }		
         
+        // update tooltips
         svg.selectAll(".label")
             .data(data)
             .transition()
                 .text(function (d) { return d.NamProv+ ', '+ d.Value+ '%'})
     })
 };
-
-
