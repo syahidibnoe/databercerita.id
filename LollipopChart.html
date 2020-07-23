@@ -9,7 +9,7 @@
     <script src="./boots34/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/cerita.css"> 
     <link rel="stylesheet" href="./css/slideanim.css">
-    <script type="text/javascript" src="js/d3v4min.js"></script>
+    <script type="text/javascript" src="js/d3v5min.js"></script>
 </head>
 <body>
   <div id="gallery" class="container-fluid asw" style="background-color: #ebd5bd">
@@ -28,7 +28,7 @@
             <div class="carousel-inner" role="listbox" style="background-color: whitesmoke">
 
                 <!-- HALAMAN 1 -->
-                <div class="item active" >
+                <div class="item active">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-12 narasi-cerita gambar-1" style="font-size:15px; height:560px; width:1210px; margin:20px;">
                         <h3 style="text-align:center;  color:darkslategrey; margin-bottom: 0px;">Seberapa Peduli Masyarakat Indonesia Terhadap Lingkungan Hidup?</h3><br>
@@ -165,7 +165,7 @@
 
         // Transisi pindah slide ke grafik
         $("#myCarousel").on('slide.bs.carousel', function () {
-            d3.csv("dataa/"+datum+".csv", function(data) {
+            d3.csv("dataa/"+datum+".csv").then(function(data) {
                 var y = d3.scaleLinear()
                     .domain([0, batas(datum)])
                     .range([h,0]);
