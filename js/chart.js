@@ -36,7 +36,6 @@ var ket = d3.scaleOrdinal()
 canvas.append("rect")
     .attr("x",margin.left)
     .attr("y",355)
-    // .attr("fill","lightgrey")
     .attr("fill","#E5E7E9 ")
     .attr("height",48)
     .attr("width",w+10)
@@ -68,7 +67,7 @@ canvas.append("text")
     .attr("font-size",12.7);
 
 // Keterangan Warna
-d3.csv("dataa/legen.csv", function(data) {
+d3.csv("dataa/legen.csv").then(function(data) {
     canvas.selectAll("legen").data(data)
         .enter()
         .append("circle")
@@ -89,8 +88,8 @@ d3.csv("dataa/legen.csv", function(data) {
             .attr("font-size",12);
 });
 
-// Tampilan default grafik (Lampu hemat energi)
-d3.csv("dataa/Lampu_HE.csv", function(data) {
+// Tampilan default Lollipop Chart (Lampu hemat energi)
+d3.csv("dataa/Lampu_HE.csv").then(function(data) {
     // Sumbu X dan Y
     var x = d3.scaleBand()
         .range([ 0,w ])
@@ -151,7 +150,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
             .attr('x2',function(d){ return x(d.NamProv)+15.5})
             .attr('y2',h)
             .attr('stroke-width',4)
-            .attr('stroke',function(d){ return color(d.NamProv)});				
+            .attr('stroke',function(d){ return color(d.NamProv)});
             
     svg.selectAll("circle")
         .data(data)
@@ -160,6 +159,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
             .attr('class','lings')
             .attr('cx',function(d){ return x(d.NamProv)+15.5})
             .attr('cy',h)
+            // .attr('r',13)
             .attr('r',12)
             .attr('fill',function(d){ return color(d.NamProv)})
             .attr('stroke','black')
@@ -187,7 +187,7 @@ d3.csv("dataa/Lampu_HE.csv", function(data) {
 function Urutan(numer,aidi) {
     if (num!=numer) {
         num= numer;
-        d3.csv("dataa/"+ datum +".csv", function(data) {
+        d3.csv("dataa/"+ datum +".csv").then(function(data) {
             tmp = document.getElementsByClassName("btnn")
             tmp[0].style.backgroundColor = "";
             tmp[0].style.color = "";
@@ -267,7 +267,7 @@ function Ganti() {
         );    
 
     // transisi perubahan grafik
-    d3.csv("dataa/"+datum+".csv", function(data) {
+    d3.csv("dataa/"+datum+".csv").then(function(data) {
         y = d3.scaleLinear()
             .domain([0, maks])
             .range([h,0]);

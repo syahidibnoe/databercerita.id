@@ -1,4 +1,3 @@
-// var h = 550;
 var margin = { top: 20, right: 20, bottom: 45, left: 25 }
     h = 350 - margin.top - margin.bottom
     w = 450 - margin.left - margin.right
@@ -8,9 +7,8 @@ var margin = { top: 20, right: 20, bottom: 45, left: 25 }
         .append('g')
         .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
 
-// default tampilan barchart
-d3.csv("elektr/TV.csv", function(data) {	
-    // console.log(data)		
+// default tampilan barchart elektronik
+d3.csv("elektr/TV.csv").then(function(data) {
     var x = d3.scaleBand()
         .range([ 0,w])
         .domain(data.map(function(d) { return d.Kat_rumah; }))
@@ -40,7 +38,7 @@ d3.csv("elektr/TV.csv", function(data) {
             .attr('y2',y(data[5].persen))
             .attr('stroke-width',1)
             .attr('stroke','grey');
-            // .style("stroke-dasharray", ("3, 3"));				
+            // .style("stroke-dasharray", ("3, 3"));
             
     svg.selectAll("mybar")
         .data(data)
@@ -86,8 +84,7 @@ function update3(datum,batas,aidi) {
     document.getElementById(aidi).style.color = "white";
     
 
-    d3.csv('elektr/'+datum+'.csv', function(data) {
-
+    d3.csv('elektr/'+datum+'.csv').then(function(data) {
         var y = d3.scaleLinear()
             .domain([0, batas])
             .range([h,0]);

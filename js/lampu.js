@@ -1,4 +1,3 @@
-// var h = 550;
 var margin = { top: 5, right: 50, bottom: 70, left: 30 }
     h1 = 350 - margin.top - margin.bottom
     w1 = 550 - margin.left - margin.right
@@ -33,7 +32,7 @@ svg1.selectAll("tekss")
         .attr("y",h1+43);
 
 // barchart
-d3.csv("./elektr/lampuu2.csv", function(data) {	
+d3.csv("./elektr/lampuu2.csv").then(function(data) {	
     var x = d3.scaleBand()
         .range([ 0,w1])
         .domain(data.map(function(d) { return d.Kat_rumah; }))
@@ -48,8 +47,6 @@ d3.csv("./elektr/lampuu2.csv", function(data) {
         .attr("transform", "translate(2.5	," + h1 + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
-        // .attr("transform", "translate(-10,0)rotate(-45)")
-        // .attr("transform", "translate(30,0)")
         .style("text-anchor", "middle");
 
     svg1.append("g")
@@ -64,8 +61,6 @@ d3.csv("./elektr/lampuu2.csv", function(data) {
             .attr('y2',y(data[5].lampu))
             .attr('stroke-width',1)
             .attr('stroke','grey');
-            // .attr('stroke','red')
-            // .style("stroke-dasharray", ("3, 3"));				
             
     svg1.selectAll("mybar")
         .data(data)
