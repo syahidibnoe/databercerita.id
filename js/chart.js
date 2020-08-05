@@ -184,13 +184,15 @@ d3.csv("dataa/Lampu_HE.csv").then(function(data) {
                 d3.selectAll('circle.lings')
                     .transition()
                     .duration(100)
-                    .attr('r',12);
+                    .attr('r',12)
+                    .attr('stroke-width',0.8);
                 label=0;
                 if (d3.select(this).attr('r')==12) {
                     d3.select(this)
                         .transition()
                         .duration(100)
-                        .attr('r', 17);
+                        .attr('r', 17)
+                        .attr('stroke-width',1.1);
                     label=1;
                 };
                 canvas.select('text.angka')
