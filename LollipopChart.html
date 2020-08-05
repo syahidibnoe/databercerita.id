@@ -10,25 +10,37 @@
     <link rel="stylesheet" href="./css/cerita.css"> 
     <link rel="stylesheet" href="./css/slideanim.css">
     <script type="text/javascript" src="js/d3v5min.js"></script>
+    <style>
+        .angka{
+            background-color: blue;
+            border-style: solid;
+            border-width: 1px;
+            padding: 3px 6px 7px 6px;
+            /* padding-left: 1px; */
+        }
+    </style>
+
 </head>
 <body>
   <div id="gallery" class="container-fluid asw" style="background-color: #ebd5bd">
+    <!-- <div id="gallery" class="container-fluid asw" style="background-color: black"> -->
     <div class="row" style="height:90vh; ">
       <div class="col-sm-12">
         <br>
         <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval=false>
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="0"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox" style="background-color: whitesmoke">
+            <!-- <div class="carousel-inner" role="listbox"> -->
 
                 <!-- HALAMAN 1 -->
-                <div class="item active">
+                <div class="item">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-12 narasi-cerita gambar-1" style="font-size:15px; height:560px; width:1210px; margin:20px;">
                         <h3 style="text-align:center;  color:darkslategrey; margin-bottom: 0px;">Seberapa Peduli Masyarakat Indonesia Terhadap Lingkungan Hidup?</h3><br>
@@ -52,7 +64,7 @@
                 </div>
 
                 <!-- HALAMAN 2 -->
-                <div  class="item">
+                <div  class="item active">
                     <div id="Container">
                         <h3 style="text-align:center; color:darkslategrey; margin: 0 ; padding-top: 0.5em;"> 
                             PERSENTASE RUMAH TANGGA BERPERILAKU TIDAK PEDULI LINGKUNGAN<br>MENURUT INDIKATOR DAN PROVINSI
@@ -62,19 +74,19 @@
                         <div class="opti" style="padding-top: 1em; ">
                             <text>Pilih Indikator : </text>
                             <select name="opsi" id="opsi" value="Pilih Kategori" style="height:25px;">
-                                <option value="Lampu_HE" onclick="Ganti()">Lampu Hemat Energi</option>
-                                <option value="Panci"	 onclick="Ganti()">Menutup Panci</option>
-                                <option value="MatiinLampu" onclick="Ganti()">Mematikan Lampu</option>
-                                <option value="Matahari" onclick="Ganti()">Pemanfaatan Matahari</option>
-                                <option value="TV"		 onclick="Ganti()">Penggunaan TV</option>
-                                <option value="DayaRendah"  onclick="Ganti()">Daya Rendah</option>
-                                <option value="PilahSampah" onclick="Ganti()">Memilah Sampah</option>
-                                <option value="BuangSampah" onclick="Ganti()">Buang Sampah</option>
-                                <option value="BarangBekas" onclick="Ganti()">Barang Bekas</option>
-                                <option value="TasBelanja" onclick="Ganti()">Tas Belanja</option>
-                                <option value="IPKLH" onclick="Ganti()">IPKLH</option>
+                                <option value="Lampu_HE"  >Lampu Hemat Energi</option>
+                                <option value="Panci"	  >Menutup Panci</option>
+                                <option value="MatiinLampu" >Mematikan Lampu</option>
+                                <option value="Matahari"  >Pemanfaatan Matahari</option>
+                                <option value="TV"		  >Penggunaan TV</option>
+                                <option value="DayaRendah" >Daya Rendah</option>
+                                <option value="PilahSampah">Memilah Sampah</option>
+                                <option value="BuangSampah">Buang Sampah</option>
+                                <option value="BarangBekas">Barang Bekas</option>
+                                <option value="TasBelanja" >Tas Belanja</option>
+                                <option value="IPKLH"      >IPKLH</option>
                             </select>
-                            <button class="btn btn-secondary" style="height:26px; width:60px; padding-top:2px; margin-top:0px;" onclick="Ganti()">Pilih</button>    
+
                         </div>
                         <div>
                             <!-- Lollipop Chart --> 
@@ -86,7 +98,7 @@
                             <button id = "rank" class="btn btnn" onclick="Urutan(2,'rank')">Ranking</button>	
 
                             <p style="font-size:14px;text-align:right; "> 
-                                *arahkan kursor pada lingkaran untuk melihat detil angka 
+                                *Klik lingkaran untuk melihat detil angka 
                                 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                             </p>
                         </div>
@@ -163,9 +175,16 @@
         });
         })
 
+        $("#opsi").on("click",Ganti);
+
         // Transisi pindah slide ke grafik
         $("#myCarousel").on('slide.bs.carousel', function () {
-            d3.csv("dataa/"+datum+".csv").then(function(data) {
+           
+            // alert('A new slide is about to be shown!');
+            }
+        );
+
+        d3.csv("dataa/"+datum+".csv").then(function(data) {
                 var y = d3.scaleLinear()
                     .domain([0, batas(datum)])
                     .range([h,0]);
@@ -213,10 +232,9 @@
                     .transition().duration(1000).delay(550)
                     .style("opacity",1)
             })
-            // alert('A new slide is about to be shown!');
-            }
-        );
+
     </script>
-    
+
+
 </body>
 </html>
