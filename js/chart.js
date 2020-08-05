@@ -1,16 +1,18 @@
-var num= 1;
-var datum='Lampu_HE';
-var judul='Lampu Hemat Energi';
-var maks;
-var x;
-var margin = { top: 15, right: 40, bottom: 130, left: 60 }
-    h = 405 - margin.top - margin.bottom
-    w = 1150 - margin.left - margin.right
+var num= 1,
+    datum='Lampu_HE',
+    judul='Lampu Hemat Energi',
+    maks,
+    label=1,
+    x,y,opsi,
+    xlab,ylab;
+var margin = { top: 25, right: 40, bottom: 130, left: 60 },
+    h = 405 - margin.top - margin.bottom,
+    w = 1150 - margin.left - margin.right,
     canvas = d3.select("#Container").append('svg')
         .attr('height',h + margin.top + margin.bottom)
-        .attr('width',w + margin.left + margin.right)
-    svg = canvas.append('g')
-            .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
+        .attr('width',w + margin.left + margin.right),
+    svg = canvas.append('g').attr('class','konten')
+            .attr('transform','translate(' + margin.left + ',' + margin.top + ')');
 
 var color = d3.scaleOrdinal()
     .domain(["Aceh","Sumatra Utara","Sumatra Barat","Riau","Kepulauan Riau","Jambi","Sumatera Selatan","Bengkulu","Bangka-Belitung",          "Lampung","DKI Jakarta","Jawa Barat","Jawa Tengah","D I Yogyakarta","Jawa Timur","Banten","Bali","Nusa Tenggara Barat",
@@ -52,19 +54,29 @@ canvas.append("line")
     .attr('stroke','black')
     .attr("opacity",0.7);
 
-canvas.append("text")
-    .attr("class","judul")
-    .text("Indikator " + judul)
-    .attr("x",515)
-    .attr("y",373)
-    .style('font-weight','bold');
+canvas.append("text")                   //teks judul keterangan
+        .attr("class","judul")
+        .text("Indikator " + judul)
+        .attr("x",515)
+        .attr("y",373)
+        .style('font-weight','bold');
 
-canvas.append("text")
-    .attr("class","keterangan")
-    .text("Ket : Persentase rumah tangga yang " + ket(datum))
-    .attr("x",515)
-    .attr("y",393)
-    .attr("font-size",12.7);
+canvas.append("text")                     //teks penjelasan indikator
+        .attr("class","keterangan")
+        .text("Ket : Persentase rumah tangga yang " + ket(datum))
+        .attr("x",515)
+        .attr("y",393)
+        .attr("font-size",12.7);
+
+canvas.append("text")                     //label nilai
+        .attr("class","angka")
+        .text("")
+        .attr("x",0)
+        .attr("y",0)
+        .attr("font-size",12.7)
+        .attr("font-family", "sans-serif")
+        .attr('opacity',0)
+        .attr('text-anchor','middle');
 
 // Keterangan Warna
 d3.csv("dataa/legen.csv").then(function(data) {
@@ -91,12 +103,14 @@ d3.csv("dataa/legen.csv").then(function(data) {
 // Tampilan default Lollipop Chart (Lampu hemat energi)
 d3.csv("dataa/Lampu_HE.csv").then(function(data) {
     // Sumbu X dan Y
-    var x = d3.scaleBand()
+    // var x = d3.scaleBand()
+    x = d3.scaleBand()
         .range([ 0,w ])
         .domain(data.map(function(d) { return d.NamProv; }))
         .padding(0.2);
         
-    var y = d3.scaleLinear()
+    // var y = d3.scaleLinear()
+    y = d3.scaleLinear()
         .domain([0, 25])
         .range([h,0]);
         
@@ -159,28 +173,40 @@ d3.csv("dataa/Lampu_HE.csv").then(function(data) {
             .attr('class','lings')
             .attr('cx',function(d){ return x(d.NamProv)+15.5})
             .attr('cy',h)
-            // .attr('r',13)
             .attr('r',12)
             .attr('fill',function(d){ return color(d.NamProv)})
             .attr('stroke','black')
             .attr('stroke-width',0.8)
-            .on('mouseover', function () {
-                d3.select(this)
+            .on('click',function (d) {
+                
+                xlab = parseInt(d3.select(this).attr('cx'))+margin.left+5;
+                ylab = parseInt(d3.select(this).attr('cy'))+5;
+                d3.selectAll('circle.lings')
                     .transition()
-                    .duration(50)
-                    .attr('r',function(d){return 17})
-                })
-            .on('mouseout', function () {
-                d3.select(this)
+                    .duration(100)
+                    .attr('r',12);
+                label=0;
+                if (d3.select(this).attr('r')==12) {
+                    d3.select(this)
+                        .transition()
+                        .duration(100)
+                        .attr('r', 17);
+                    label=1;
+                };
+                canvas.select('text.angka')
+                    .transition().duration(100)
+                        .attr('opacity',0)
                     .transition()
-                    .duration(50)
-                    .attr('r',function(d){return 12})
-                })
+                        .attr('x',xlab)
+                        .attr('y',ylab)
+                        .text(d.Value + '%')
+                    .transition().duration(100)
+                        .attr('opacity',1);
+                d3.event.stopPropagation();
+            })
             .append('title') // Tooltip
                 .attr("class","label")
                 .text(function (d) { return d.NamProv+ ', '+ d.Value+ '%'  })
-
-
 });
 
 // Fungsi pengurutan (Pulau atau ranking)
@@ -198,12 +224,12 @@ function Urutan(numer,aidi) {
 
             // Buat sumbu x sesuai urutan di data csv
             if (num==1) {
-                var x = d3.scaleBand()
+                x = d3.scaleBand()
                     .range([ 0,w])
                     .domain(data.map(function(d) { return d.NamProv; }))
                     .padding(0.2);
             } else {
-                var x = d3.scaleBand()
+                x = d3.scaleBand()
                     .range([ 0,w])
                     .domain(data.map(function(d) { return d.NamProv_R; }))
                     .padding(0.2);
@@ -217,24 +243,19 @@ function Urutan(numer,aidi) {
             svg.selectAll("circle.lings")
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
-                
-            svg.selectAll("circle.lings")
-                .transition().duration(1500)
-                    .attr('cx',function(d){ return x(d.NamProv)+15.5})
+                    .attr('r',12)  
     
             svg.selectAll("line.garis")
                 .transition().duration(1500)
                     .attr('x1',function(d){ return x(d.NamProv)+15.5})
                     .attr('x2',function(d){ return x(d.NamProv)+15.5})
         })
-
     };
-
 };
 
 // Fungsi ganti indikator
 function Ganti() {
-    var opsi = document.getElementById("opsi");
+    opsi = document.getElementById("opsi");
     datum = opsi.options[opsi.selectedIndex].value;
     judul = opsi.options[opsi.selectedIndex].text;
     maks=batas(datum);
@@ -300,15 +321,10 @@ function Ganti() {
             svg.selectAll("circle.lings")
                 .data(data)
                 .transition().duration(1500)
-                .attr("cy",function(d){ return y(d.Value)})
-
-            svg.selectAll("circle.lings")
-                .data(data)
-                .transition().duration(1500)
-                .attr("cy",function(d){ return y(d.Value)})
-            
+                    .attr("cy",function(d){ return y(d.Value)})
+                    .attr('r',12)  
         } else {
-            var x = d3.scaleBand()
+            x = d3.scaleBand()
                 .range([ 0,w])
                 .domain(data.map(function(d) { return d.NamProv_R; }))
                 .padding(0.2);
@@ -322,18 +338,13 @@ function Ganti() {
                     .attr('y2',function(d){ return y(d.Value)})
                     .attr('x1',function(d){ return x(d.NamProv)+15.5})
                     .attr('x2',function(d){ return x(d.NamProv)+15.5})
-
-            svg.selectAll("circle.lings")
-                .data(data)
-                .transition().duration(1500)
-                    .attr('cx',function(d){ return x(d.NamProv)+15.5})
-                    .attr("cy",function(d){ return y(d.Value)})
             
             svg.selectAll("circle.lings")
                 .data(data)
                 .transition().duration(1500)
                     .attr('cx',function(d){ return x(d.NamProv)+15.5})
                     .attr("cy",function(d){ return y(d.Value)})
+                    .attr('r',12)  
         }		
         
         // update tooltips
@@ -343,3 +354,17 @@ function Ganti() {
                 .text(function (d) { return d.NamProv+ ', '+ d.Value+ '%'})
     })
 };
+
+// svg.on('click',cek(label));
+d3.select('div#Container').on('click',function () {
+
+    if (label==1) {
+        d3.selectAll('circle.lings')
+            .transition()
+            .duration(100)
+            .attr('r',12);
+        canvas
+        .select('text.angka').transition().attr('opacity',0);
+    };
+});
+
